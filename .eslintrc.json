@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "react-app",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "plugins": ["import", "unused-imports", "better-styled-components", "prettier"],
+  "rules": {
+    "prettier/prettier": "warn",
+    "import/first": "warn",
+    "import/newline-after-import": "warn",
+    "import/no-duplicates": "warn",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc"
+        },
+        "pathGroups": [
+          {
+            "pattern": "common/**",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "groups": ["builtin", "external", "internal", ["parent", "index", "sibling"]]
+      }
+    ],
+    "unused-imports/no-unused-imports": "warn",
+    "better-styled-components/sort-declarations-alphabetically": "warn",
+    "@typescript-eslint/consistent-type-imports": "warn"
+  }
+}
